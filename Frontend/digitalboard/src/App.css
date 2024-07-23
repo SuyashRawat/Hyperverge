@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f7f7;
 }
 
 .App-logo {
@@ -35,4 +40,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+.google-slides-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.google-slides-container h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.google-slides-container p {
+  font-size: 18px;
+  color: #666;
+}
+
+iframe {
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
