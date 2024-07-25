@@ -7,6 +7,11 @@ const SpotifyPlayer = ({ accessToken }) => {
 
   const searchTrack = async () => {
     try {
+      if (!accessToken) {
+        console.error('Access token is missing');
+        return;
+      }
+
       const response = await axios.get('https://api.spotify.com/v1/search', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -17,6 +22,7 @@ const SpotifyPlayer = ({ accessToken }) => {
           limit: 1,
         },
       });
+
       const track = response.data.tracks.items[0];
       if (track) {
         setTrackUri(track.uri);
@@ -62,8 +68,8 @@ const styles = {
     border: '1px solid #ccc',
     borderRadius: '8px',
     padding: '20px',
-    // backgroundColor: '#fff',
-    // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#fff',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -84,7 +90,7 @@ const styles = {
     fontSize: '16px',
     border: 'none',
     borderRadius: '4px',
-    // backgroundColor: '#1DB954',
+    backgroundColor: '#1DB954',
     color: 'white',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',

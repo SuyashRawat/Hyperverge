@@ -43,9 +43,10 @@ const styles = {
     width: "100%",
     height:'100%',
     padding: "0",
-    margin: "0",
+    // margin: "0",
   },
   newsFeed: {
+
     width: "40%",
     marginLeft: "5%",
     maxHeight: "100%", // Ensure it takes full height of parent
@@ -68,30 +69,32 @@ const Home = () => {
       <div style={styles.container}>
         <div style={styles.topRow}>
           <div style={styles.pomodoroTimer}>
-            <PomodoroTimer />
+          <ToDoList />
+          
           </div>
           <div style={styles.appLinks}>
-            <AppLinks />
+          <HealthTracker />
+           
           </div>
           <div style={styles.spotifyAuth}>
             <SpotifyAuth />
           </div>
-          <div>
+          {/* <div>
             <GoogleMeet />
-          </div>
+          </div> */}
         </div>
         <div>
           <hr />
         </div>
         <div style={styles.bottomRow}>
-          <div style={styles.newsFeed}>
+          <div style={{...styles.newsFeed}}>
+          <AppLinks />
+          </div>
+          <div  style={styles.healthTracker}>
+          <PomodoroTimer />
+          </div>
+          <div  style={styles.toDoList}>
             <NewsFeed />
-          </div>
-          <div style={styles.healthTracker}>
-            <HealthTracker />
-          </div>
-          <div style={styles.toDoList}>
-            <ToDoList />
           </div>
         </div>
         <div style={styles.bottomRow}>

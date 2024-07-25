@@ -4,6 +4,9 @@ import SpotifyPlayer from './SpotifyPlayer';
 
 const SpotifyAuth = () => {
   const [accessToken, setAccessToken] = useState(null);
+  const clientId = 'c3787bf6fd964cadac0de9fa3f715711';
+  const redirectUri = 'http://localhost:3000/callback';
+  const scopes = 'streaming user-read-private user-read-email';
 
   useEffect(() => {
     const { code } = queryString.parse(window.location.search);
@@ -14,6 +17,7 @@ const SpotifyAuth = () => {
 
   const fetchAccessToken = async (code) => {
     try {
+      // Emulating the backend request (replace this with actual backend call)
       const response = await fetch('http://localhost:3001/api/token', {
         method: 'POST',
         headers: {
@@ -25,10 +29,9 @@ const SpotifyAuth = () => {
       const data = await response.json();
       if (data.access_token) {
         setAccessToken(data.access_token);
-        // Clear query parameters from the URL after login
         window.history.replaceState({}, document.title, window.location.pathname);
       } else {
-        console.error('Failed to obtain access token');
+        console.error('Failed to obtain access token:', data);
       }
     } catch (error) {
       console.error('Error fetching access token:', error);
@@ -36,7 +39,7 @@ const SpotifyAuth = () => {
   };
 
   const handleLogin = () => {
-    const authUrl = `https://accounts.spotify.com/authorize?client_id=c3787bf6fd964cadac0de9fa3f715711&response_type=code&redirect_uri=${encodeURIComponent('http://localhost:3000/callback')}&scope=streaming`;
+    const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
     window.location = authUrl;
   };
 
@@ -59,8 +62,8 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    // backgroundColor: '#f5f5f5',
-    flexDirection: 'column', // Ensure vertical centering
+    backgroundColor: '#f5f5f5',
+    flexDirection: 'column',
   },
   loginButton: {
     padding: '10px 20px',
