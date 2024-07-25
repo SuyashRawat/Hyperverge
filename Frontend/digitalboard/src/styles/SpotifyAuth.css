@@ -1,0 +1,47 @@
+/* SpotifyAuth.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42vh;
+    background-color: #121212;
+    flex-direction: column;
+    color: #fff;
+    width: 25vw !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .loginButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1DB954;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginButton:hover {
+    background-color: #1aa34a;
+    transform: scale(1.05);
+  }
+  
+  .loginButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(30, 215, 96, 0.4);
+  }
+  
+  .loginButton img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
