@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/HealthTracker.css';
 
+const styles = {
+  container: {
+    height: '100%',
+    overflow: 'auto',
+  },
+};
+
 const HealthTracker = () => {
   // States for workout tracking
   const [workouts, setWorkouts] = useState([]);
@@ -62,7 +69,7 @@ const HealthTracker = () => {
   const filteredWorkouts = workouts.filter(applyFilter);
 
   return (
-    <div className="health-tracker-container">
+    <div className="health-tracker-container" style={styles.container}>
       <h2>Health Tracker</h2>
 
       <button className="toggle-button" onClick={() => setIsAddWorkoutVisible(!isAddWorkoutVisible)}>

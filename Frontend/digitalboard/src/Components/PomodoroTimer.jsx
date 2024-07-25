@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import '../PomodoroTimer.css';
+import '../styles/PomodoroTimer.css';
 
 const PomodoroTimer = () => {
-  const [minutes, setMinutes] = useState(25);
+  const [focusMinutes, setFocusMinutes] = useState(25);
+  const [minutes, setMinutes] = useState(focusMinutes);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [isBreak, setIsBreak] = useState(false);
 
   useEffect(() => {
     let timer;
@@ -13,9 +13,7 @@ const PomodoroTimer = () => {
       timer = setInterval(() => {
         if (seconds === 0) {
           if (minutes === 0) {
-            setIsBreak(!isBreak);
-            setMinutes(isBreak ? 25 : 5);
-            setSeconds(0);
+            resetTimer();
           } else {
             setMinutes(minutes - 1);
             setSeconds(59);
@@ -28,22 +26,40 @@ const PomodoroTimer = () => {
       clearInterval(timer);
     }
     return () => clearInterval(timer);
-  }, [isActive, seconds]);
+  }, [isActive, seconds, minutes]);
 
   const resetTimer = () => {
     setIsActive(false);
-    setMinutes(25);
+    setMinutes(focusMinutes);
     setSeconds(0);
-    setIsBreak(false);
+  };
+
+  const handleFocusChange = (e) => {
+    const value = parseInt(e.target.value, 10) || 0;
+    setFocusMinutes(value);
+    if (!isActive) {
+      setMinutes(value);
+    }
   };
 
   return (
-    <div className="pomodoro-container"
-    style={{width:'100%'}}>
+    <div className="pomodoro-container" style={{ width: '100%' }}>
       <h2>Pomodoro Timer</h2>
-      <p>{isBreak ? 'Break Time!' : 'Focus Time!'}</p>
+      <p>{isActive ? 'Focus Time!' : 'Set Time and Start'}</p>
       <div className="timer">
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+      </div>
+      <div className="time-settings">
+        <label>
+          Focus Time (minutes):
+          <input
+            type="number"
+            value={focusMinutes}
+            onChange={handleFocusChange}
+            placeholder="Enter minutes"
+            min="1"
+          />
+        </label>
       </div>
       <div className="buttons">
         <button onClick={() => setIsActive(!isActive)}>
