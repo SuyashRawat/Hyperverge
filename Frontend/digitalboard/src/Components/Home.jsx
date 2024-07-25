@@ -83,7 +83,7 @@ const Home = () => {
           <HealthTracker />           
           </div>
           <div  style={styles.newsFeed}>
-            {/* <NewsFeed /> */}
+            <NewsFeed />
           </div>
           
         </div>
