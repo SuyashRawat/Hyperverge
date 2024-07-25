@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../styles/SpotifyPlayer.css';
+import spotifyLogo from '../images/spotify-logo.png';  // Adjust the path as necessary
 
 const SpotifyPlayer = ({ accessToken }) => {
   const [query, setQuery] = useState('');
@@ -35,69 +37,28 @@ const SpotifyPlayer = ({ accessToken }) => {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="spotify-player-container">
+      <img src={spotifyLogo} alt="Spotify Logo" className="spotify-logo" />
       <input
         type="text"
         placeholder="Search for a song"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        style={styles.searchBar}
+        className="search-bar"
       />
-      <button onClick={searchTrack} style={styles.searchButton}>
+      <button onClick={searchTrack} className="search-button">
         Search
       </button>
       {trackUri && (
         <iframe
           src={`https://open.spotify.com/embed/track/${trackUri.split(':')[2]}`}
-          width="100%"
-          height="80"
-          frameBorder="0"
+          className="spotify-iframe"
           allowtransparency="true"
           allow="encrypted-media"
-          style={styles.iframe}
         ></iframe>
       )}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    width: '350px',
-    height: '450px',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    padding: '20px',
-    backgroundColor: '#fff',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  searchBar: {
-    width: '100%',
-    padding: '10px',
-    fontSize: '16px',
-    border: '1px solid #ddd',
-    borderRadius: '4px',
-    marginBottom: '10px',
-    boxSizing: 'border-box',
-  },
-  searchButton: {
-    width: '100%',
-    padding: '10px',
-    fontSize: '16px',
-    border: 'none',
-    borderRadius: '4px',
-    backgroundColor: '#1DB954',
-    color: 'white',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
-  },
-  iframe: {
-    borderRadius: '4px',
-  },
 };
 
 export default SpotifyPlayer;
