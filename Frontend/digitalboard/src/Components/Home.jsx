@@ -64,14 +64,17 @@ const styles = {
 
 const Home = () => {
   return (
-    <>
+    <div style={{
+      background: 'linear-gradient(to bottom left, black, white)',
+      // width: '100%',
+      // height: '100vh' 
+    }}>
       <div style={styles.container}>
         <div style={styles.topRow}>
           <div style={styles.pomodoroTimer}>
           <ToDoList />
-          
           </div>
-          <div style={styles.appLinks}>
+          <div style={styles.healthTracker}>
           <HealthTracker />
            
           </div>
@@ -87,10 +90,10 @@ const Home = () => {
         </div>
         <div style={styles.bottomRow}>
           <div style={{...styles.newsFeed}}>
-          <AppLinks />
-          </div>
-          <div  style={styles.healthTracker}>
           <PomodoroTimer />
+          </div>
+          <div  style={styles.appLinks}>
+          <AppLinks />
           </div>
           <div  style={styles.toDoList}>
             <NewsFeed />
@@ -105,7 +108,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
