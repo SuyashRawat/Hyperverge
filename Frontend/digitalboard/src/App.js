@@ -16,7 +16,9 @@ function App() {
   return (
     <>
     
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'black',color:'white'}}>
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'black',color:'white',
+      position:'fixed',width:'100%'
+    }}>
       <h1>Hyperverge</h1>
     </div>
 

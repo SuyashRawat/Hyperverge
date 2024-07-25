@@ -23,6 +23,7 @@ const styles = {
     width: "100%",
     padding: "0",
     margin: "0",
+    height:'30% !important'
   },
   pomodoroTimer: {
     width: "20%",
