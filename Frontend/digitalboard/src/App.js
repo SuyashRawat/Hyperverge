@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import State from './state/State';
+import SpotifyAuth from './Components/SpotifyAuth';
 import Home from './Components/Home'
 import GoogleSlides from './Components/GoogleSlides';
 import PomodoroTimer from './Components/PomodoroTimer';
@@ -12,6 +13,8 @@ function App() {
 
 
      <PomodoroTimer />
+     <h1>Spotify Player</h1>
+     <SpotifyAuth />
     {/* <State> */}
     <Router>
           <div className="App">
@@ -19,6 +22,7 @@ function App() {
           <Routes>
             {/* <Route exact path="/About" element={<About />} /> */}
             <Route exact path="/" element={<Home/>} />
+           
             {/* <Route exact path="/login" element={<Login showAlert={showAlert} />} /> */}
             {/* <Route exact path="/ssignup" element={<Ssignup showAlert={showAlert} />} /> */}
             {/* <Route exact path="/edit-note/:id" element={<Edit showAlert={showAlert} />} /> */}
