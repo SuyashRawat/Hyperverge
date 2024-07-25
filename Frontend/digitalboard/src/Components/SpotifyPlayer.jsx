@@ -4,9 +4,16 @@ import axios from 'axios';
 const SpotifyPlayer = ({ accessToken }) => {
   const [query, setQuery] = useState('');
   const [trackUri, setTrackUri] = useState('');
-  
+
   const searchTrack = async () => {
     try {
+      if (!accessToken) {
+        console.error('Access token is missing');
+        return;
+      }
+
+      console.log('Access token being used:', accessToken); // Log access token
+
       const response = await axios.get('https://api.spotify.com/v1/search', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -17,6 +24,9 @@ const SpotifyPlayer = ({ accessToken }) => {
           limit: 1,
         },
       });
+
+      console.log('API Response:', response.data); // Log API response
+
       const track = response.data.tracks.items[0];
       if (track) {
         setTrackUri(track.uri);
@@ -24,7 +34,11 @@ const SpotifyPlayer = ({ accessToken }) => {
         alert('No track found');
       }
     } catch (error) {
-      console.error('Error searching track:', error);
+      if (error.response) {
+        console.error('Error response:', error.response.data);
+      } else {
+        console.error('Error searching track:', error);
+      }
     }
   };
 

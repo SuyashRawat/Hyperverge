@@ -38,7 +38,8 @@ const PomodoroTimer = () => {
   };
 
   return (
-    <div className="pomodoro-container">
+    <div className="pomodoro-container"
+    style={{width:'100%'}}>
       <h2>Pomodoro Timer</h2>
       <p>{isBreak ? 'Break Time!' : 'Focus Time!'}</p>
       <div className="timer">

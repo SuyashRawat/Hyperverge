@@ -55,6 +55,12 @@ const ToDoList = () => {
             key={f}
             onClick={() => setFilter(f)}
             className={filter === f ? 'active-filter' : ''}
+            style={{
+              textAlign:'start',
+              display:'flex',
+              alignItems:'flex-start',
+              justifyContent:'flex-start'
+            }}
           >
             {f.charAt(0).toUpperCase() + f.slice(1)}
           </button>

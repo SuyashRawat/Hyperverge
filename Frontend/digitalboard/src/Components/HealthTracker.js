@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/HealthTracker.css';
 
 const HealthTracker = () => {
@@ -99,11 +100,11 @@ const HealthTracker = () => {
             onChange={(e) => setNewWorkout({ ...newWorkout, notes: e.target.value })}
             placeholder="Notes"
           />
-          <button onClick={addWorkout}>Add Workout</button>
+          <button className='mx-2' onClick={addWorkout}>Add Workout</button>
         </div>
       )}
 
-      <button className="toggle-button" onClick={() => setIsPreviousWorkoutsVisible(!isPreviousWorkoutsVisible)}>
+      <button className="toggle-button mx-2" onClick={() => setIsPreviousWorkoutsVisible(!isPreviousWorkoutsVisible)}>
         {isPreviousWorkoutsVisible ? 'Hide Previous Workouts' : 'Show Previous Workouts'}
       </button>
 
