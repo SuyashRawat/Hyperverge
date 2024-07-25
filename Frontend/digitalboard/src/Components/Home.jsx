@@ -48,10 +48,8 @@ const styles = {
     // margin: "0",
   },
   newsFeed: {
-
-    width: "30%",
-    marginLeft: "5%",
-    marginRight: "3%",
+    marginTop:'0',
+    width: "33%",
     maxHeight: "100%", // Ensure it takes full height of parent
     // overflow: "scroll", // Use 'auto' instead of 'scroll' for better behavior
   },
@@ -82,7 +80,7 @@ const Home = () => {
           <div className="healthTracker" style={styles.healthTracker}>
           <HealthTracker />           
           </div>
-          <div  style={styles.newsFeed}>
+          <div className="newsFeed"  style={styles.newsFeed}>
             <NewsFeed />
           </div>
           

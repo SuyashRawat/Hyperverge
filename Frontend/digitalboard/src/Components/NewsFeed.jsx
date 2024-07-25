@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import '../styles/NewsFeed.css'
 const NewsFeed = () => {
   useEffect(() => {
     // Load Twitter script after component mounts
@@ -37,9 +37,9 @@ const NewsFeed = () => {
   }, []);
 
   return (
-    <div style={{...styles.container,justifyContent:'center'}}>
+    <div className="newsFeed-container" style={{...styles.container,justifyContent:'center'}}>
       <h2 style={{justifyContent:'center',textAlign:'center'}}>Today's News from Twitter</h2>
-      <div style={{...styles.newsBox,display:'flex',justifyContent:'center',marginBottom:'5vh'}}>
+      <div style={{...styles.newsBox,display:'flex',justifyContent:'center',}}>
         <a
           className="twitter-timeline"
           href="https://twitter.com/BBCBreaking?ref_src=twsrc%5Etfw"
@@ -55,12 +55,13 @@ const NewsFeed = () => {
 
 const styles = {
   container: {
-    marginTop: '10px',
-    maxWidth: '600px', // Increased width
-    margin: '0 auto',
+    // marginTop: '10px',
+    // maxWidth: '600px', // Increased width
+    // margin: '0 auto',
+    width:'80%',
     background: 'linear-gradient(to right, #000000, #434343)', // Gradient background
     borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0.3, 0.3, 0.3, 0.3)',
+    boxShadow: '0 0px 0px rgba(0.3, 0.3, 0.3, 0.3)',
     color: '#ffffff', // Text color for better contrast
     // width: '100%'
   },
@@ -68,7 +69,7 @@ const styles = {
     maxHeight: '70vh',
     border: '1px solid #ddd',
     borderRadius: '8px',
-    padding: '15px',
+    // padding: '15px',
     boxShadow: '0 4px 8px rgba(0.3, 0.3, 0.3, 0.1)',
     overflow: 'auto',
     transition: 'box-shadow 0.3s ease-in-out',
