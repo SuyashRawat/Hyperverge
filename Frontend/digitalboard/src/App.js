@@ -26,7 +26,7 @@ function App() {
          
           <Routes>
             {/* <Route exact path="/About" element={<About />} /> */}
-            {/* <Route exact path="/" element={<Home/>} /> */}
+           <Route exact path="/" element={<Home/>} /> 
             {/* <Route exact path="/login" element={<Login showAlert={showAlert} />} /> */}
             {/* <Route exact path="/ssignup" element={<Ssignup showAlert={showAlert} />} /> */}
             {/* <Route exact path="/edit-note/:id" element={<Edit showAlert={showAlert} />} /> */}
