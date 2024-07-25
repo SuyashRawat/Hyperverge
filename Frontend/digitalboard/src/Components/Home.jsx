@@ -68,30 +68,32 @@ const Home = () => {
       <div style={styles.container}>
         <div style={styles.topRow}>
           <div style={styles.pomodoroTimer}>
-            {/* <PomodoroTimer /> */}
+          <ToDoList />
+          
           </div>
           <div style={styles.appLinks}>
-            {/* <AppLinks /> */}
+          <HealthTracker />
+           
           </div>
           <div style={styles.spotifyAuth}>
             <SpotifyAuth />
           </div>
-          <div>
+          {/* <div>
             <GoogleMeet />
-          </div>
+          </div> */}
         </div>
         <div>
           <hr />
         </div>
         <div style={styles.bottomRow}>
           <div style={{...styles.newsFeed}}>
-            {/* <HealthTracker /> */}
+          <AppLinks />
           </div>
           <div  style={styles.healthTracker}>
-            {/* <ToDoList /> */}
+          <PomodoroTimer />
           </div>
           <div  style={styles.toDoList}>
-            {/* <NewsFeed /> */}
+            <NewsFeed />
           </div>
         </div>
         <div style={styles.bottomRow}>
