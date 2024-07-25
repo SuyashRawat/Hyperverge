@@ -1,0 +1,9 @@
+.healthTracker {
+    width: 33%;
+    max-height:100%; /* Ensure it takes full height of the parent */
+    /* overflow-y: scroll; Use 'auto' for better behavior */
+  }
+  .toDoList{
+    max-Height: 100%;
+    /* overflow-y: scroll; */
+  }

@@ -2,10 +2,13 @@
   "manifest_version": 3,
   "name": "Digital Notice Board",
   "version": "1.0",
-  "description": "A Chrome extension to change the Google homepage to a custom-designed page.",
+  "description": "A digital notice board with various widgets.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
   "permissions": [
-    "activeTab",
-    "declarativeContent"
+    "storage",
+    "activeTab"
   ],
   "background": {
     "service_worker": "background.js"
@@ -14,9 +17,6 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"]
-    }
-  ],
-  "action": {
-    "default_popup": "index.html"
-  }
+}
+]
 }

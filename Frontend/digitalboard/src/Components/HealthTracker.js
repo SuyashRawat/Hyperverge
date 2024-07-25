@@ -2,13 +2,6 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/HealthTracker.css';
 
-const styles = {
-  container: {
-    height: '100%',
-    overflow: 'auto',
-  },
-};
-
 const HealthTracker = () => {
   // States for workout tracking
   const [workouts, setWorkouts] = useState([]);
@@ -30,13 +23,12 @@ const HealthTracker = () => {
   });
 
   // States for collapsible sections
-  const [isAddWorkoutVisible, setIsAddWorkoutVisible] = useState(false);
+  const [isAddWorkoutVisible, setIsAddWorkoutVisible] = useState(true);
   const [isPreviousWorkoutsVisible, setIsPreviousWorkoutsVisible] = useState(true);
 
   // Fetch stored data on component mount
   useEffect(() => {
     const storedWorkouts = JSON.parse(localStorage.getItem('workouts'));
-
     if (storedWorkouts) setWorkouts(storedWorkouts);
   }, []);
 
@@ -69,12 +61,12 @@ const HealthTracker = () => {
   const filteredWorkouts = workouts.filter(applyFilter);
 
   return (
-    <div className="health-tracker-container" style={styles.container}>
+    <div className="health-tracker-container">
       <h2>Health Tracker</h2>
 
-      <button className="toggle-button" onClick={() => setIsAddWorkoutVisible(!isAddWorkoutVisible)}>
+      {/* <button className="toggle-button" onClick={() => setIsAddWorkoutVisible(!isAddWorkoutVisible)}>
         {isAddWorkoutVisible ? 'Hide Add Workout' : 'Add Workout'}
-      </button>
+      </button> */}
 
       {isAddWorkoutVisible && (
         <div className="tracker-section">

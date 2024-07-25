@@ -44,7 +44,7 @@ const NewsFeed = () => {
           className="twitter-timeline"
           href="https://twitter.com/BBCBreaking?ref_src=twsrc%5Etfw"
           data-tweet-limit="3"
-          data-width="400"
+          data-width="350"
         >
           Tweets by BBCBreaking
         </a>
@@ -56,7 +56,7 @@ const NewsFeed = () => {
 const styles = {
   container: {
     marginTop: '10px',
-    maxWidth: '650px', // Increased width
+    maxWidth: '600px', // Increased width
     margin: '0 auto',
     background: 'linear-gradient(to right, #000000, #434343)', // Gradient background
     borderRadius: '8px',
@@ -65,7 +65,7 @@ const styles = {
     // width: '100%'
   },
   newsBox: {
-    maxHeight: '50vh',
+    maxHeight: '70vh',
     border: '1px solid #ddd',
     borderRadius: '8px',
     padding: '15px',

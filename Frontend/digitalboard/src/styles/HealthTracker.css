@@ -9,6 +9,8 @@
     color: #e0e0e0; /* Light text color for contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    /* display: flex; */
+  height: 100%;
   }
   
   .tracker-section {
@@ -105,4 +107,65 @@
   .toggle-button:hover {
     background-color: #0056b3;
   }
-  
+  /* HealthTracker.css */
+
+/* Main container for the health tracker */
+.health-tracker-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 600px; /* Set a fixed height for the container */
+  overflow: hidden; /* Hide overflow for the container */
+  border: 1px solid #ddd; /* Optional: add a border for better visibility */
+  border-radius: 5px; /* Optional: add rounded corners */
+  padding: 15px;
+}
+
+/* Section for adding a new workout */
+.tracker-section {
+  margin-bottom: 15px;
+}
+
+/* Button styles */
+.toggle-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Filter section */
+.filter-section {
+  max-height: 200px; /* Fixed height for the filter section */
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+
+/* Container for the list of workouts */
+.workout-list-container {
+  max-height: 300px; /* Fixed height for the workout list */
+  /* overflow-y: auto; Add vertical scroll if content overflows */
+}
+
+/* Workout card style */
+.workout-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Optional: Style for empty state */
+p {
+  color: #999;
+}
+
+/* Optional: Styles for inputs and buttons */
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: vertical;
+}

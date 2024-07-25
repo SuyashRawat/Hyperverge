@@ -41,8 +41,8 @@ const ToDoList = () => {
 
   const filteredTasks = tasks.filter(task => {
     if (filter === 'all') return true;
-    if (filter === 'completed') return task.completed;
-    if (filter === 'uncompleted') return !task.completed;
+    if (filter === 'done') return task.completed;
+    if (filter === 'left') return !task.completed;
     return task.priority === filter;
   });
 
@@ -50,16 +50,17 @@ const ToDoList = () => {
     <div className="todo-container">
       <h2>Tasks</h2>
       <div className="filters">
-        {['all', 'completed', 'uncompleted', 'high', 'medium', 'low'].map(f => (
+        {['all', 'done', 'left', 'high', 'medium', 'low'].map(f => (
           <button
             key={f}
             onClick={() => setFilter(f)}
             className={filter === f ? 'active-filter' : ''}
             style={{
-              textAlign:'start',
-              display:'flex',
-              alignItems:'flex-start',
-              justifyContent:'flex-start'
+              textAlign: 'start',
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-start',
+              width: "fit-content"
             }}
           >
             {f.charAt(0).toUpperCase() + f.slice(1)}
@@ -71,7 +72,7 @@ const ToDoList = () => {
       ) : (
         <ul className="todo-list">
           {filteredTasks.map(task => (
-            <li key={task.id} className={`${task.completed ? 'completed' : 'uncompleted'} ${task.priority}`}>
+            <li key={task.id} className={`${task.completed ? 'done' : 'left'} ${task.priority}`}>
               <input
                 type="checkbox"
                 checked={task.completed}
