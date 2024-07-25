@@ -1,0 +1,108 @@
+.health-tracker-container {
+    text-align: center;
+    max-width: 400px; /* Adjusted for widget size */
+    margin: 0 auto;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #121212; /* Aesthetic black background */
+    color: #e0e0e0; /* Light text color for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  
+  .tracker-section {
+    margin-bottom: 15px;
+  }
+  
+  .tracker-section input, .tracker-section textarea {
+    padding: 6px;
+    width: calc(100% - 12px); /* Adjust width to account for padding and borders */
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333; /* Dark background for inputs */
+    color: #e0e0e0; /* Light text color for inputs */
+    box-sizing: border-box; /* Ensures padding is included in width */
+    margin-bottom: 6px; /* Space between inputs */
+  }
+  
+  .tracker-section input::placeholder, .tracker-section textarea::placeholder {
+    color: #888; /* Placeholder color for better visibility */
+  }
+  
+  .tracker-section input:focus, .tracker-section textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .tracker-section button {
+    padding: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .tracker-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-section {
+    margin-top: 10px;
+  }
+  
+  .filter-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Reduced spacing between filter inputs */
+    justify-content: center;
+  }
+  
+  .filter-inputs input {
+    padding: 6px;
+    width: calc(50% - 12px); /* Adjust width for compact layout */
+  }
+  
+  .workout-list-container {
+    margin-top: 10px;
+  }
+  
+  .workout-card {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #222;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .workout-card strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .workout-card p {
+    margin: 5px 0;
+  }
+  
+  .workout-card:last-child {
+    margin-bottom: 0;
+  }
+  
+  .toggle-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
