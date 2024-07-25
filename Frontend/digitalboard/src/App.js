@@ -10,38 +10,20 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import GoogleMeet from './Components/Meet';
 import ToDoList from './Components/ToDo';
 import HealthTracker from './Components/HealthTracker';
+import AppLinks from './Components/AppLinks';
+import SpotifyPlayer from './Components/SpotifyPlayer';
 function App() {
   return (
     <>
-    <div>
+    
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'black',color:'white'}}>
       <h1>Hyperverge</h1>
     </div>
-    <div className="container">
-      <div>
-      <PomodoroTimer />
-      
-      </div>
-    </div>
 
 
 
-    <div style={{display:'flex'}}>
-     <GoogleSlides embedUrl="https://docs.google.com/presentation/d/e/2PACX-1vSHU5lCgMJ3Akb8ovraVAAX4v31zv9WtbDghTsP2Om2iLCHxj4hxwq0oGrIZ4CtgQgUcn7Dbetzxu6l/embed?start=false&loop=false&delayms=3000"/>
-
-
-     <PomodoroTimer />
-     </div>
-     <div>
-      
-     <GoogleMeet />
-     </div>
-     <ToDoList/>
-     <HealthTracker/>
-     <h1>Spotify Player</h1>
-     <SpotifyAuth />
-    {/* <State> */}
+    
     <Router>
-          <div className="App">
          
           <Routes>
             {/* <Route exact path="/About" element={<About />} /> */}
@@ -52,7 +34,7 @@ function App() {
             {/* <Route exact path="/ssignup" element={<Ssignup showAlert={showAlert} />} /> */}
             {/* <Route exact path="/edit-note/:id" element={<Edit showAlert={showAlert} />} /> */}
           </Routes>
-        </div> 
+        {/* </div>  */}
         </Router>
       {/* </State> */}
     </>

@@ -59,7 +59,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#f5f5f5',
+    // backgroundColor: '#f5f5f5',
     flexDirection: 'column', // Ensure vertical centering
   },
   loginButton: {
