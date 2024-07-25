@@ -5,7 +5,7 @@ import SpotifyPlayer from './SpotifyPlayer';
 const SpotifyAuth = () => {
   const [accessToken, setAccessToken] = useState(null);
   const clientId = 'c3787bf6fd964cadac0de9fa3f715711';
-  const redirectUri = 'http://localhost:3000/callback'; // Ensure this matches Spotify Developer Dashboard
+  const redirectUri = 'http://localhost:3000/callback';
   const scopes = 'streaming user-read-private user-read-email';
 
   useEffect(() => {
@@ -17,6 +17,7 @@ const SpotifyAuth = () => {
 
   const fetchAccessToken = async (code) => {
     try {
+      // Emulating the backend request (replace this with actual backend call)
       const response = await fetch('http://localhost:3001/api/token', {
         method: 'POST',
         headers: {
@@ -27,9 +28,7 @@ const SpotifyAuth = () => {
 
       const data = await response.json();
       if (data.access_token) {
-        console.log('Access token obtained:', data.access_token); // Log access token
         setAccessToken(data.access_token);
-        // Clear query parameters from the URL after login
         window.history.replaceState({}, document.title, window.location.pathname);
       } else {
         console.error('Failed to obtain access token:', data);
