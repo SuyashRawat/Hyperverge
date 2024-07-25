@@ -37,7 +37,8 @@ function App() {
             {/* <Route exact path="/" element={<Home/>} /> */}
             {/* <Route exact path="/" element={ <SpotifyAuth />} /> */}
             <Route exact path="/" element={ <Home />} />
-            {/* <Route path="/callback" component={<SpotifyPlayer/>} /> */}
+      
+          <Route path="/callback" element={<Home />} />
             {/* <Route exact path="/login" element={<Login showAlert={showAlert} />} /> */}
             {/* <Route exact path="/ssignup" element={<Ssignup showAlert={showAlert} />} /> */}
             {/* <Route exact path="/edit-note/:id" element={<Edit showAlert={showAlert} />} /> */}

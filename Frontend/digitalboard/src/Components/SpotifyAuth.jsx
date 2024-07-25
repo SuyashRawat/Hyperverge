@@ -9,37 +9,15 @@ const SpotifyAuth = () => {
   const scopes = 'streaming user-read-private user-read-email';
 
   useEffect(() => {
-    const { code } = queryString.parse(window.location.search);
-    if (code) {
-      fetchAccessToken(code);
+    const { access_token } = queryString.parse(window.location.hash);
+    if (access_token) {
+      setAccessToken(access_token);
+      window.history.replaceState({}, document.title, window.location.pathname);
     }
   }, []);
 
-  const fetchAccessToken = async (code) => {
-    try {
-      // Emulating the backend request (replace this with actual backend call)
-      const response = await fetch('http://localhost:3001/api/token', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ code }),
-      });
-
-      const data = await response.json();
-      if (data.access_token) {
-        setAccessToken(data.access_token);
-        window.history.replaceState({}, document.title, window.location.pathname);
-      } else {
-        console.error('Failed to obtain access token:', data);
-      }
-    } catch (error) {
-      console.error('Error fetching access token:', error);
-    }
-  };
-
   const handleLogin = () => {
-    const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
+    const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
     window.location = authUrl;
   };
 
