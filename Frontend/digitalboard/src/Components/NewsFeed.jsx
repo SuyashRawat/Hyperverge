@@ -37,7 +37,7 @@ const NewsFeed = () => {
   }, []);
 
   return (
-    <div className="newsFeed-container" style={{...styles.container,justifyContent:'center'}}>
+    <div className="newsFeed-container" style={{...styles.container,justifyContent:'center',marginTop:'3vh'}}>
       <h2 style={{justifyContent:'center',textAlign:'center'}}>Today's News from Twitter</h2>
       <div style={{...styles.newsBox,display:'flex',justifyContent:'center',}}>
         <a

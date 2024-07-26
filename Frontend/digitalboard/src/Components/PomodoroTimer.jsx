@@ -35,7 +35,7 @@ const PomodoroTimer = () => {
   };
 
   return (
-    <div className="pomodoro-container" style={{ width: '100%' }}>
+    <div className="pomodoro-container" style={{ width: '100%' ,height:'40vh'}}>
       <h2>Pomodoro Timer</h2>
       <p>{isActive ? 'Focus Time!' : 'Ready to Start'}</p>
       <div className="timer">

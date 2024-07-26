@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faMeetup } from '@fortawesome/free-brands-svg-icons'; // For Google
-import { faTable } from '@fortawesome/free-solid-svg-icons'; // For Google Sheets
+import { faGoogle, faMeetup,faGoogleDrive } from '@fortawesome/free-brands-svg-icons'; // For Google
+import { faTable,faEnvelope } from '@fortawesome/free-solid-svg-icons'; // For Google Sheets
 import { faRobot } from '@fortawesome/free-solid-svg-icons'; // Use a generic icon for ChatGPT if not available
 
 const AppLinks = () => {
@@ -34,6 +34,20 @@ const AppLinks = () => {
         </div>
         {/* Google Sheets */}
       </a>
+      </div>
+      <div>
+        <a href="https://mail.google.com" rel="noopener noreferrer" style={styles.link}>
+          <div style={styles.gmailCircle}>
+            <FontAwesomeIcon icon={faEnvelope} style={styles.icon} />
+          </div>
+          {/* Gmail */}
+        </a>
+        <a href="https://drive.google.com" rel="noopener noreferrer" style={styles.link}>
+          <div style={styles.driveCircle}>
+            <FontAwesomeIcon icon={faGoogleDrive} style={styles.icon} />
+          </div>
+          {/* Google Drive */}
+        </a>
       </div>
     </div>
   );
@@ -89,6 +103,26 @@ const styles = {
     backgroundColor: '#34A853', // Light green
     borderRadius: '50%',
     width: '5rem', // Adjust size of circle
+    height: '5rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: '10px',
+  },
+  gmailCircle: {
+    backgroundColor: '#D93025', // Gmail color
+    borderRadius: '50%',
+    width: '5rem',
+    height: '5rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: '10px',
+  },
+  driveCircle: {
+    backgroundColor: '#0F9D58', // Google Drive color
+    borderRadius: '50%',
+    width: '5rem',
     height: '5rem',
     display: 'flex',
     alignItems: 'center',
