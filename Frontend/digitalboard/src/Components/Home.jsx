@@ -72,7 +72,8 @@ const styles = {
     borderRadius: "8px",
     overflow: "auto",
     padding:'2%',
-    marginBottom:'2%'
+    marginBottom:'2%',
+    marginLeft:'2%'
   }
 };
 

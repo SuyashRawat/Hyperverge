@@ -37,19 +37,22 @@ const GoogleFormEmbed = () => {
         )}
       </form>
       {submittedFormId && (
-        <div className="iframe-container">
-          <iframe 
-            src={formUrl} 
-            title="Google Form"
-            width="100%" 
-            height="100%" 
-            frameBorder="0" 
-            marginHeight="0" 
-            marginWidth="0"
-          >
-            Loading…
-          </iframe>
-        </div>
+        <div style={{ width: '100%', height: '100vh' }}>
+        <iframe 
+          src={formUrl} 
+          width="100%" 
+          height="100%" 
+          frameBorder="0" 
+          marginHeight="0" 
+          marginWidth="0"
+          scrolling="yes"
+          seamless="seamless"
+          className="hidden-scrollbar"
+        >
+          Loading…
+        </iframe>
+      </div>
+      
       )}
     </div>
   );

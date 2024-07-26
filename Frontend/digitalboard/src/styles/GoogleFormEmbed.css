@@ -34,6 +34,12 @@
   border-radius: 4px;
   background-color: #333;
   color: #fff;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.search-bar::placeholder {
+  color: #fff; /* Set placeholder color to white */
 }
 
 /* Button styling */
@@ -47,6 +53,7 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .search-button:hover {
@@ -56,8 +63,19 @@
 /* Iframe container styling */
 .iframe-container {
   width: 100%;
-  height: 600px; /* Set height as needed */
-  margin-top: 20px; /* Space between form and iframe */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide the scrollbar */
+  border: 2px solid #000; /* Add border */
+  border-radius: 8px; /* Add border radius */
+  background-color: #000; /* Black background */
+  position: relative; /* Needed for absolute positioning of iframe */
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe border */
+  overflow: hidden; /* Ensure iframe content doesn't show scroll bar */
 }
 
 /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
