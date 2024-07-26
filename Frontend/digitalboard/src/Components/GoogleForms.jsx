@@ -17,29 +17,30 @@ const GoogleFormEmbed = () => {
   const formUrl = `https://docs.google.com/forms/d/e/${submittedFormId}/viewform?embedded=true`;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} >
+    <div className="google-form-embed-container">
+      <form onSubmit={handleSubmit} className="form-container">
         {!submittedFormId && (
           <>
-            <label>
+            <label className="form-label">
               <input
                 type="text"
                 value={formId}
                 placeholder="Enter Google Form ID:"
                 onChange={handleInputChange}
-                className="search-bar mx-3 text-white"
+                className="search-bar"
               />
             </label>
-            <button type="submit" className="btn btn-success mx-5">
+            <button type="submit" className="search-button">
               Load Form
             </button>
           </>
         )}
       </form>
       {submittedFormId && (
-        <div style={{ width: '100%', height: '100vh' }}>
+        <div className="iframe-container">
           <iframe 
             src={formUrl} 
+            title="Google Form"
             width="100%" 
             height="100%" 
             frameBorder="0" 

@@ -1,33 +1,72 @@
+/* Container for the Google Form embed */
+.google-form-embed-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #121212; /* Dark background for better contrast */
+  color: #e0e0e0; /* Light text color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Form container styling */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between input and button */
+}
+
+/* Label styling */
+.form-label {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search bar styling */
 .search-bar {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .search-bar::placeholder {
-    color: #fff; /* Set placeholder color to white */
-  }
-  
-  .search-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #1DB954;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-  }
-  
-  .search-button:hover {
-    background-color: #17a849;
-  }
-  
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Button styling */
+.search-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1DB954;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #17a849;
+}
+
+/* Iframe container styling */
+.iframe-container {
+  width: 100%;
+  height: 600px; /* Set height as needed */
+  margin-top: 20px; /* Space between form and iframe */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.iframe-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for other browsers */
+.iframe-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
