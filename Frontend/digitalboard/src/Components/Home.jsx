@@ -67,13 +67,13 @@ const styles = {
   },googleFormEmbed: {
     width: "30%",
     height: "100%",
-    backgroundColor: "black",
-    border: "1px solid white",
+    backgroundColor: "grey",
+    border: "2px solid white",
     borderRadius: "8px",
     overflow: "auto",
     padding:'2%',
     marginBottom:'2%',
-    marginLeft:'2%'
+    marginLeft:'5%'
   }
 };
 
