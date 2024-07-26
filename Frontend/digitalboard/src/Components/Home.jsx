@@ -64,7 +64,16 @@ const styles = {
     width: "33%",
     height:'100%'
     // marginRight: "5%",
-  },
+  },googleFormEmbed: {
+    width: "30%",
+    height: "100%",
+    backgroundColor: "black",
+    border: "1px solid white",
+    borderRadius: "8px",
+    overflow: "auto",
+    padding:'2%',
+    marginBottom:'2%'
+  }
 };
 
 const Home = () => {
@@ -104,7 +113,7 @@ const Home = () => {
             <GoogleSlides embedUrl="https://docs.google.com/presentation/d/e/2PACX-1vSHU5lCgMJ3Akb8ovraVAAX4v31zv9WtbDghTsP2Om2iLCHxj4hxwq0oGrIZ4CtgQgUcn7Dbetzxu6l/embed?start=false&loop=false&delayms=3000"/>
           </div>
         </div>
-        <div>
+        <div style={styles.googleFormEmbed}>
           <GoogleFormEmbed />
         </div>
       </div>
