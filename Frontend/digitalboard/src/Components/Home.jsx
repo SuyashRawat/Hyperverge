@@ -7,8 +7,10 @@ import GoogleCalendar from "./Calendar";
 import SpotifyAuth from "./SpotifyAuth";
 import HealthTracker from "./HealthTracker";
 import ToDoList from "./ToDo";
-import GoogleMeet from "./Meet";
-import '../styles/Home.css'
+// import GoogleMeet from "./Meet";
+import '../styles/Home.css';
+import GoogleFormEmbed from "./GoogleForms";
+
 const styles = {
   container: {
     width: "100%",
@@ -68,33 +70,27 @@ const styles = {
 const Home = () => {
   return (
     <>
-
-      <div style={styles.container} 
-      // width: '100%',
-      // height: '100vh' 
-    >
+      <div style={styles.container}>
         <div style={styles.topRow}>
           <div className="toDoList" style={styles.toDoList}>
-          <ToDoList />
+            <ToDoList />
           </div>
           <div className="healthTracker" style={styles.healthTracker}>
-          <HealthTracker />           
+            <HealthTracker />           
           </div>
-          <div className="newsFeed"  style={styles.newsFeed}>
+          <div className="newsFeed" style={styles.newsFeed}>
             <NewsFeed />
           </div>
-          
         </div>
         <div>
           <hr />
         </div>
         <div style={styles.bottomRow}>
-          
-        <div  style={styles.pomodoroTimer}>
-          <PomodoroTimer />
+          <div style={styles.pomodoroTimer}>
+            <PomodoroTimer />
           </div>
-          <div style={{...styles.appLinks}}>
-          <AppLinks />
+          <div style={styles.appLinks}>
+            <AppLinks />
           </div>
           <div style={styles.spotifyAuth}>
             <SpotifyAuth />
@@ -102,11 +98,14 @@ const Home = () => {
         </div>
         <div style={styles.bottomRow}>
           <div>
-          <GoogleCalendar />
+            <GoogleCalendar />
           </div>
           <div>
-          <GoogleSlides embedUrl="https://docs.google.com/presentation/d/e/2PACX-1vSHU5lCgMJ3Akb8ovraVAAX4v31zv9WtbDghTsP2Om2iLCHxj4hxwq0oGrIZ4CtgQgUcn7Dbetzxu6l/embed?start=false&loop=false&delayms=3000"/>
+            <GoogleSlides embedUrl="https://docs.google.com/presentation/d/e/2PACX-1vSHU5lCgMJ3Akb8ovraVAAX4v31zv9WtbDghTsP2Om2iLCHxj4hxwq0oGrIZ4CtgQgUcn7Dbetzxu6l/embed?start=false&loop=false&delayms=3000"/>
           </div>
+        </div>
+        <div>
+          <GoogleFormEmbed />
         </div>
       </div>
     </>
