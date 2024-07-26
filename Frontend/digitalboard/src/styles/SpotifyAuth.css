@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 42vh;
+    height: fit-content;
     background-color: #121212;
     flex-direction: column;
     color: #fff;
